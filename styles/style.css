@@ -17,8 +17,31 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  padding: 102px 372px 50px 372px;
+  font-family: "Inter-Variable", sans-serif;
 }
 
 .header {
-  
+  width: 700px;    /* сделать адаптивной */
+  height: 570px;    /* сделать адаптивной */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 102px;
+  padding-top: 106px;
+}
+
+.title {
+  color: black;
+  align-self: center;
+}
+
+.subtitle {
+  color: black;
+  align-self: center;
+}
+
+.theme-menu {
+  align-self: center;
 }
