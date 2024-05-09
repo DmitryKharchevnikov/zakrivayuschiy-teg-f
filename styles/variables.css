@@ -2,6 +2,14 @@
 
 :root {
     --bg-image: ;
+    --font-main: "Inter-Variable";
+    --font-accent: "PressStart2P";
+    --color-text_black: black;
+    --color-text_green: #00CC14;
+    --font-normal: 400;
+    --font-bold: 700;
+    --font-size_title: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+    --font-size_subtitle: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem)
 }
 
 @media () {
