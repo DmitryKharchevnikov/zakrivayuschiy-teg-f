@@ -81,9 +81,14 @@
 
 .theme-menu__button:disabled {
   pointer-events: none;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:disabled::after {
+  content: "▶";
+  position: absolute;
+  left: clamp(8.438rem, -3.27rem + 49.953vw, 41.688rem);
 }  
 
 
@@ -97,6 +102,8 @@
   background: none;
   border: none;
   background-color: white;
+  font-family: var(--font-accent), sans-serif;
+  font-size: 14px;
 }
 
 
