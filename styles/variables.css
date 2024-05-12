@@ -1,19 +1,16 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 
 :root {
-    --bg-image: ;
-    --font-main: "Inter-Variable";
-    --font-accent: "PressStart2P";
-    --color-text_black: black;
-    --color-text_green: #00CC14;
-    --font-normal: 400;
-    --font-bold: 700;
-    --font-size_title: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
-    --font-size_subtitle: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem)
+  --bg-image: ;
+  --font-main: "Inter-Variable";
+  --font-accent: "PressStart2P";
+  --color-text: #000;
+  --font-normal: 400;
+  --font-bold: 700;
+  --font-size_title: clamp(3.063rem, 2.71rem + 1.502vw, 4.063rem);
+  --font-size_subtitle: clamp(0.875rem, 0.677rem + 0.845vw, 1.438rem);
+  --color-label_shadow: #fff;
+  --background-vertical: #d3d3d3;
+  --background-gorizontal_1: #e7e7e7;
+  --background-gorizontal_2: #1a1a1a;
 }
-
-@media () {
-    :root {
-      
-    }
-  }
