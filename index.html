@@ -53,7 +53,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;/HTML&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint0"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -110,7 +110,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;/HTML&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint1"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -169,7 +169,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;CSS&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint1_whatif"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -226,7 +226,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;desigions&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint2"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -285,7 +285,7 @@
         <div class="card_wallpaper">
           <p class="card_label">care</p>
           <img
-            class="card_img"
+            class="card_img sprint2_support"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -345,7 +345,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;support&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint3"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -402,7 +402,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;lifes-style: none;&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint3_sad"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -461,7 +461,7 @@
         <div class="card_wallpaper">
           <p class="card_label">&lt;experience&gt;</p>
           <img
-            class="card_img"
+            class="card_img sprint4"
             src="https://media.giphy.com/media/SyP24XyDVsavNPECoR/giphy.gif?cid=ecf05e47votmqi7cfq1bmdlzsrxu3v6gt8id9y3jpbbqv3d1&ep=v1_gifs_related&rid=giphy.gif&ct=g"
             alt=""
             loading="lazy"
@@ -518,13 +518,18 @@
       </article>
     </main>
     <footer class="footer">
-      <button class="button__text footer_button">
+      <button class="button__text footer_button" type="button" onclick="window['dialog'].showModal();" aria-controls="dialog">
         <svg viewBox="0 0 21 21" class="floppy">
           <use href="svg/floppy.svg#floppy" />
         </svg>
         <span class="button_span">Сохранить на память</span>
       </button>
     </footer>
+    <dialog class="dialog" id="dialog">
+      <div class="dialog_content">
+        <p>Вставьте дискету, чтобы продолжить</p>
+      </div>
+    </dialog>
     <script src="./scripts/like.js"></script>
   </body>
 </html>
