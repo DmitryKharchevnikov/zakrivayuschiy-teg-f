@@ -23,16 +23,7 @@
   font-family: var(--font-main), sans-serif;
   font-variation-settings: var(--font-normal);
   color: var(--color-text);
-  background-image: repeating-linear-gradient(
-      to right,
-      var(--background-vertical),
-      transparent 2px
-    ),
-    repeating-linear-gradient(
-      to bottom,
-      var(--background-gorizontal_1),
-      var(--background-gorizontal_2) 2px
-    );
+  background-image: var(--background);
   background-size: cover;
   background-attachment: fixed;
 }
@@ -86,6 +77,7 @@
   text-align: left;
   text-transform: uppercase;
   font-size: 14px;
+  position: relative;
 }
 
 .theme-menu__button:disabled {
@@ -94,11 +86,40 @@
   transition: opacity 0.3s ease;
 }
 
-.theme-menu__button:disabled::after {
+.theme-menu__button::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0%;
+  background-color: var(--color-text);
+  transition: width 300ms;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  opacity: 0.6;
+  transition: width 300ms;
+}
+
+
+.theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  left: clamp(8.438rem, -3.27rem + 49.953vw, 41.688rem);
+  left: -10px;
+  animation: tic 0.5s ease-in-out infinite alternate;
 }
+
+.theme-menu__button:focus-visible {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+
 
 .main {
   align-self: center;
@@ -171,7 +192,7 @@
   padding: 9px 17px;
 }
 
-.button__text {
+.card__like-button {
   width: 130px;
   height: 38px;
   background-color: var(--color-label_shadow);
@@ -179,6 +200,12 @@
   font-size: 14px;
   border: 2px solid var(--color-text);
   padding: 11px 20px;
+}
+
+.card__like-button:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--color-text);
+  transition: 0.5s ease-in-out;
 }
 
 .button_like {
@@ -218,6 +245,19 @@
 
 .button_span {
   align-self: center;
+}
+
+.like-icon {
+  outline: none;
+}
+
+.like-icon:hover .core  {
+  fill: var(--color-text);
+  transition: all 0.3s;
+}
+
+.like-icon:hover .main-body  {
+  fill: var(--color-text);
 }
 
 .floppy {
@@ -264,14 +304,31 @@
 }
 
 @media (width <= 375px) {
+  .page {
+    padding: 100px 0px;
+  }
+
   .header {
+    padding-top: 121px;
+  }
+
+  .card_wallpaper {
+    height: 375px;
+  }
+
+  .button__text {
+  padding: 12px 20px;
   }
 
   .floppy {
     width: 28px;
+    align-self: center;  
   }
 
   .footer_button {
     flex-direction: column;
+    width: 306px;
+    height: 84px;
+    padding: 12px;
   }
 }
