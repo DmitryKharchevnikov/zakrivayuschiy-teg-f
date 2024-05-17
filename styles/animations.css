@@ -14,11 +14,31 @@
 */
 
 @keyframes tic {
-    0% {
-    left: clamp(8.438rem, -3.27rem + 49.953vw, 41.688rem);
-    }
+  0% {
+    left: -14px;
+  }
 
-    100% {
-    left: clamp(8.438rem, -3.27rem + 49.953vw, 41.688rem - 4px);
-    }
+  100% {
+    left: -18px;
+  }
+}
+
+@keyframes tapheart {
+  from {
+    transform: scale(1);
+    transform-origin: center;
+  }
+  to {
+    transform: scale(1.5);
+    transform-origin: center;
+  }
+}
+
+@keyframes wow {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
