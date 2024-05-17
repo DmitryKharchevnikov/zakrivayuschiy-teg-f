@@ -220,6 +220,12 @@
   position: relative;
 }
 
+.button__card:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 0 var(--color-text);
+  transition: box-shadow 0.3s ease;
+}
+
 .card__like-button {
   width: 130px;
   height: 38px;
@@ -271,7 +277,8 @@
 }
 
 .button_like:focus-visible {
-  outline: none;
+  outline: 2px solid var(--color-text);
+  transition: outline 0.3s ease;
 }
 
 .sparks {
@@ -418,9 +425,9 @@
 .dialog[open] {
   font-family: var(--font-main), sans-serif;
   font-size: 14px;
-  width: 357px;
+  width: 353px;
   background: var(--color-label_shadow);
-  padding: 32px 42px;
+  /* padding: 32px 42px; */
   text-transform: uppercase;
   border: 2px solid var(--color-text);
 }
@@ -431,7 +438,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 20px;
-  margin-bottom: 30px;
+  margin: 30px;
 }
 
 .dialog::backdrop {
@@ -471,9 +478,10 @@
 }
 
 .floppy_dialog {
-  max-width: 39px;
+  max-width: 73px;
   height: auto;
   color: var(--color-text);
+  margin-top: 26px;
 }
 
 @media (width <= 375px) {
