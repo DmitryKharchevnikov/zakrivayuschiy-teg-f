@@ -14,7 +14,7 @@
     repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7, #1a1a1a);
   --color-button_text: #fff;
-  --color-heart_like: red;
+  --color-heart_like: #ff0000;
   --color-heart_contour: #000;
 }
 
@@ -27,7 +27,7 @@
     repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
     linear-gradient(#007f0c, #004306);
   --color-button_text: #00cc14;
-  --color-heart_like: red;
+  --color-heart_like: #ff0000;
   --color-heart_contour: #00cc14;
 }
 
@@ -41,7 +41,7 @@
       repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
       linear-gradient(#007f0c, #004306);
     --color-button_text: #00cc14;
-    --color-heart_like: red;
+    --color-heart_like: #ff0000;
     --color-heart_contour: #00cc14;
   }
 }

@@ -17,7 +17,6 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
-  max-inline-size: 1440px;
   display: flex;
   flex-direction: column;
   padding: 100px 372px 50px 372px;
@@ -48,6 +47,7 @@
   align-self: center;
   font-weight: var(--font-normal);
   font-size: var(--font-size_title);
+  line-height: 65px;
 }
 
 .subtitle {
@@ -55,6 +55,7 @@
   font-weight: var(--font-normal);
   font-size: var(--font-size_subtitle);
   margin-bottom: 2px;
+  line-height: 23px;
 }
 
 .theme-menu {
@@ -70,18 +71,20 @@
 
 .theme-menu__button {
   font-weight: var(--font-normal);
-  background: none;
+  background: transparent;
   border: none;
   text-align: left;
   text-transform: uppercase;
   font-size: 14px;
   position: relative;
+  line-height: 14px;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
 }
 
 .theme-menu__button:disabled {
   pointer-events: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button::after {
@@ -91,7 +94,7 @@
   width: 100%;
   opacity: 0.6;
   background-color: var(--color-text);
-  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
   position: absolute;
   bottom: -1px;
   left: 0;
@@ -101,7 +104,6 @@
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
-  transition: transform 0.3s ease;
 }
 
 .theme-menu__button:disabled::before {
@@ -113,16 +115,15 @@
   animation: tic 0.5s ease-in-out infinite alternate;
 }
 
-.theme-menu__button:focus-visible {
+.theme-menu__button:focus-visible,
+.theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
   transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
-  cursor: pointer;
   opacity: 60%;
-  transition: opacity 0.3s ease;
 }
 
 .main {
@@ -143,9 +144,9 @@
 
 .card_title {
   font-size: 18px;
-  font-weight: var(--font-bold);
+  font-variation-settings: "wght" var(--font-bold);
   padding: 5px 10px;
-  letter-spacing: -0.1px;
+  line-height: 21.78px;
 }
 
 .card_wallpaper {
@@ -168,6 +169,15 @@
     -1px -1px 1px var(--color-label_shadow);
   mix-blend-mode: hard-light;
   z-index: 1;
+  line-height: 14px;
+}
+
+@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+  .card_label {
+    -webkit-text-stroke: 1px var(--color-label_shadow);
+    text-stroke: 1px var(--color-label_shadow);
+    text-shadow: none;
+  }
 }
 
 .card_img {
@@ -187,7 +197,8 @@
 
 .card_p {
   font-size: 18px;
-  font-weight: var(--font-normal);
+  font-variation-settings: "wght" var(--font-normal);
+  line-height: 21px;
 }
 
 .card_button {
@@ -218,12 +229,16 @@
 
 .button__card {
   position: relative;
+  transition: box-shadow 0.3s ease;
 }
 
 .button__card:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-text);
-  transition: box-shadow 0.3s ease;
+}
+
+.button__card:focus {
+  outline: none;
 }
 
 .card__like-button {
@@ -235,7 +250,8 @@
   border: 2px solid var(--color-text);
   padding: 11px 20px;
   box-shadow: none;
-  transition: box-shadow 300ms;
+  transition: transform 0.5s ease-in-out;
+  opacity: 1;
 }
 
 .card__like-button:hover {
@@ -259,8 +275,6 @@
 
 .card__like-button:hover::before {
   transform: translate(0);
-  transition: transform 0.5s ease-in-out;
-  opacity: 1;
 }
 
 .card__like-button:focus-visible {
@@ -274,11 +288,11 @@
   border: none;
   margin-top: 5px;
   margin-right: 2px;
+  transition: outline 0.3s ease;
 }
 
 .button_like:focus-visible {
   outline: 2px solid var(--color-text);
-  transition: outline 0.3s ease;
 }
 
 .sparks {
@@ -302,7 +316,6 @@
   border: 2px solid var(--color-text);
   padding: 11px 20px;
   box-shadow: none;
-  transition: box-shadow 300ms;
 }
 
 .floppy {
@@ -319,7 +332,11 @@
   align-self: center;
 }
 
-.card__icon-button {
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button:focus-visible {
   outline: none;
 }
 
@@ -332,6 +349,10 @@
   outline: none;
 }
 
+.like-icon.is-liked {
+  transform-origin: center;
+}
+
 .like-icon .core {
   fill: transparent;
   transition: fill 0.3s linear;
@@ -341,7 +362,7 @@
 .like-icon:hover .core {
   fill: var(--color-heart_contour);
   transition: fill 0.3s linear;
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 
 .like-icon:active .core {
@@ -358,7 +379,7 @@
 
 .like-icon .main-body {
   fill: transparent;
-  transition: fill 0.3s;
+  transition: fill 0.3s linear;
 }
 
 .like-icon:hover .main-body {
@@ -373,59 +394,65 @@
 
 .like-icon:active .main-body {
   fill: var(--color-heart_like);
-  transition: fill 0.3s 0.05s;
+  transition: fill 0.3s linear 0.05s;
 }
 
 .like-icon.is-liked .heart {
   animation: tapheart 0.3s 0.1s ease-in alternate;
-  transform-origin: center;
+  animation-iteration-count: 1;
 }
 
 .like-icon.is-liked .sparks {
   animation: wow 0.3s 0.3s ease-in alternate;
+  animation-iteration-count: 1;
 }
 
 .like-icon.is-liked .contour {
   fill: var(--color-heart_like);
-  transition: fill 0.3s 0.06s;
+  transition: fill 0.3s linear 0.06s;
 }
 
-.sprint0 {
+.like-icon .contour {
+  fill: var(--color-heart_contour);
+  transition: fill 0.3s linear;
+}
+
+.filter_brightness {
   filter: brightness(200%);
 }
 
-.sprint1 {
+.filter_contrast {
   filter: contrast(20%);
 }
 
-.sprint1_whatif {
+.filter_invert {
   filter: invert(0.7);
 }
 
-.sprint2 {
+.filter_opacity {
   filter: opacity(0.8);
 }
 
-.sprint2_support {
+.filter_grayscale {
   filter: grayscale(0.8);
 }
 
-.sprint3 {
+.filter_saturate {
   filter: saturate(158%);
 }
 
-.sprint3_sad {
+.filter_hue-rotate {
   filter: hue-rotate(-90deg);
 }
 
-.sprint4 {
+.filter_mix {
   filter: sepia(1) contrast(2) brightness(200%);
 }
 
 .dialog[open] {
   font-family: var(--font-main), sans-serif;
   font-size: 14px;
-  width: 353px;
+  max-width: 353px;
   background: var(--color-label_shadow);
   padding: 30px;
   text-transform: uppercase;
@@ -447,7 +474,7 @@
 }
 
 .dialog_content_p {
-  width: 234px;
+  max-width: 234px;
   font-family: var(--font-accent), fantasy;
   color: var(--color-text);
   font-size: 14px;
@@ -461,7 +488,8 @@
   height: 38px;
   padding: 9px 17px;
   border: 2px solid var(--color-text);
-  background: none;
+  background: transparent;
+  text-transform: uppercase;
 }
 
 .button__text {
