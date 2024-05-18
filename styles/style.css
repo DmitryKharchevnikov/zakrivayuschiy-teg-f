@@ -19,7 +19,7 @@
   min-block-size: 100dvb;
   display: flex;
   flex-direction: column;
-  padding: 100px 372px 50px 372px;
+  padding: 100px 372px 103px 372px;
   font-family: var(--font-main), sans-serif;
   font-variation-settings: var(--font-normal);
   color: var(--color-text);
@@ -119,7 +119,6 @@
 .theme-menu__button:focus {
   outline: none;
   opacity: 0.6;
-  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -172,7 +171,10 @@
   line-height: 14px;
 }
 
-@supports ((text-stroke: 1px #000) or (-webkit-text-stroke: 1px #000)) {
+@supports (
+  (text-stroke: 1px var(--color-label_shadow)) or
+    (-webkit-text-stroke: 1px var(--color-label_shadow))
+) {
   .card_label {
     -webkit-text-stroke: 1px var(--color-label_shadow);
     text-stroke: 1px var(--color-label_shadow);
@@ -204,8 +206,21 @@
 .card_button {
   display: flex;
   justify-content: flex-end;
-  padding-bottom: 22px;
+  padding-bottom: 21px;
   padding-right: 25px;
+}
+
+.button__card {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  background-color: var(--color-label_shadow);
+  font-family: var(--font-accent), fantasy;
+  font-size: 14px;
+  border: 2px solid var(--color-text);
+  box-shadow: none;
+  opacity: 1;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .button__card::after {
@@ -227,11 +242,6 @@
   transition: transform 0.5s ease-in-out;
 }
 
-.button__card {
-  position: relative;
-  transition: box-shadow 0.3s ease;
-}
-
 .button__card:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 0 var(--color-text);
@@ -244,43 +254,7 @@
 .card__like-button {
   width: 130px;
   height: 38px;
-  background-color: var(--color-label_shadow);
-  font-family: var(--font-accent), fantasy;
-  font-size: 14px;
-  border: 2px solid var(--color-text);
   padding: 11px 20px;
-  box-shadow: none;
-  transition: transform 0.5s ease-in-out;
-  opacity: 1;
-}
-
-.card__like-button:hover {
-  cursor: pointer;
-  overflow: hidden;
-}
-
-.card__like-button::before {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  display: block;
-  background-color: var(--color-text);
-  transform: translate(-100%);
-  transition: transform 0.5s ease-in-out;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-.card__like-button:hover::before {
-  transform: translate(0);
-}
-
-.card__like-button:focus-visible {
-  outline: none;
-  box-shadow: 2px 2px 0px 0px var(--color-text);
-  transition: box-shadow 300ms;
 }
 
 .button_like {
@@ -301,7 +275,7 @@
 
 .footer {
   align-self: center;
-  margin-top: 49px;
+  margin-top: 50px;
 }
 
 .footer_button {
@@ -310,12 +284,7 @@
   display: flex;
   flex-direction: row;
   gap: 8px;
-  background-color: var(--color-label_shadow);
-  font-family: var(--font-accent), fantasy;
-  font-size: 14px;
-  border: 2px solid var(--color-text);
   padding: 11px 20px;
-  box-shadow: none;
 }
 
 .floppy {
@@ -330,6 +299,7 @@
 
 .button_span {
   align-self: center;
+  margin-top: 5px;
 }
 
 .card__icon-button:focus {
@@ -349,7 +319,7 @@
   outline: none;
 }
 
-.like-icon.is-liked {
+.like-icon .heart {
   transform-origin: center;
 }
 
@@ -368,13 +338,13 @@
 .like-icon:active .core {
   fill: var(--color-heart_like);
   transition: fill 0.3s linear;
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 
 .like-icon.is-liked .core {
   fill: var(--color-heart_like);
   transition: fill 0.3s linear;
-  transition-delay: 0;
+  transition-delay: 0s;
 }
 
 .like-icon .main-body {
@@ -414,7 +384,7 @@
 
 .like-icon .contour {
   fill: var(--color-heart_contour);
-  transition: fill 0.3s linear;
+  transition: fill 0.3s linear 0.1s;
 }
 
 .filter_brightness {
@@ -487,8 +457,6 @@
   width: 293px;
   height: 38px;
   padding: 9px 17px;
-  border: 2px solid var(--color-text);
-  background: transparent;
   text-transform: uppercase;
 }
 
@@ -520,9 +488,12 @@
     padding-top: 121px;
   }
 
-  .card_wallpaper {
-    height: 375px;
-    width: 375px;
+  .title {
+    line-height: 49px;
+  }
+
+  .subtitle {
+    line-height: 14px;
   }
 
   .floppy {
@@ -535,5 +506,6 @@
     width: 306px;
     height: 84px;
     padding: 12px;
+    gap: 3px;
   }
 }
