@@ -19,7 +19,7 @@
   min-block-size: 100dvb;
   display: flex;
   flex-direction: column;
-  padding: 100px 372px 103px 372px;
+  padding: 100px clamp(0rem, -8.143rem + 34.742vw, 23.125rem) 103px clamp(0rem, -8.143rem + 34.742vw, 23.125rem);
   font-family: var(--font-main), sans-serif;
   font-variation-settings: var(--font-normal);
   color: var(--color-text);
